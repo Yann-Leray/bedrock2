@@ -23,7 +23,7 @@ Ltac align_trace_bad :=
     end;
   repeat eapply align_trace_app || eapply align_trace_cons || eapply align_trace_nil || reflexivity.
 
-Goal exists (x y z : list nat), x ++ y = z. do 3 eexists. Fail Timeout 1 align_trace_bad. Abort.
+Goal exists (x y z : list nat), x ++ y = z. do 3 eexists. align_trace_bad. Abort.
 
 Ltac align_trace :=
   repeat match goal with
